@@ -1,10 +1,8 @@
 import 'dart:developer';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:resono/core/domain/constants/api_const.dart';
 import 'package:resono/data/impl/userInformation.dart';
+import 'package:resono/data/model/UsersModel.dart';
 import 'package:resono/data/network/AuthApiService.dart';
-import 'package:resono/model/UsersModel.dart';
+import 'package:resono/services/apiConstants/api_const.dart';
 
 class UsersRepo{
   AuthApiService baseApiService = UserInformation();

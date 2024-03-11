@@ -4,9 +4,10 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:resono/core/domain/constants/api_const.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:resono/services/apiConstants/api_const.dart';
 
-import '../../utils/logging_interceptors.dart';
+
 
 class ApiService {
   late Dio _dio;
@@ -23,7 +24,7 @@ class ApiService {
     }
 
     _dio = Dio(options);
-    _dio.interceptors.add(LoggingInterceptor());
+    _dio.interceptors.add(PrettyDioLogger());
 
 
 

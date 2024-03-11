@@ -1,5 +1,5 @@
 
-import 'package:resono/data/response/status.dart';
+import 'package:resono/services/response/status.dart';
 
 class ApiResponse<T> {
 

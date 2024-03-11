@@ -1,6 +1,6 @@
 import 'package:resono/data/network/AuthApiService.dart';
+import 'package:resono/services/api_service/api_service.dart';
 
-import '../../core/domain/api_service/api_service.dart';
 
 class UserInformation extends AuthApiService{
   @override

@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:resono/controller/dashboardScreenController.dart';
-import 'package:resono/data/response/status.dart';
+import 'package:resono/services/response/status.dart';
 import 'package:resono/utlis/textStyle.dart';
-import 'package:resono/weidget/CustomTextView.dart';
-import 'package:resono/weidget/LoadingOverlay.dart';
-import 'package:resono/weidget/ResponsiveWidget.dart';
-import 'package:resono/weidget/customAppbar.dart';
+import 'package:resono/view/screens/initScreen/controller/initScreenController.dart';
+import 'package:resono/view/weidget/CustomTextView.dart';
+import 'package:resono/view/weidget/LoadingOverlay.dart';
+import 'package:resono/view/weidget/ResponsiveWidget.dart';
 
-class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+class InitScreen extends StatelessWidget {
+  const InitScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<DashboardScreenController>(builder: (controller) {
+    return GetBuilder<InitScreenController>(builder: (controller) {
       return ResponsiveWidget(
         largeScreen: dashboardWebViewDesign(controller),
         mediumScreen: dashboardTabletViewDesign(controller),
@@ -23,7 +22,7 @@ class DashboardScreen extends StatelessWidget {
   }
 }
 
-Widget dashboardWebViewDesign(DashboardScreenController controller) {
+Widget dashboardWebViewDesign(InitScreenController controller) {
   return Scaffold(
     appBar:  AppBar(),
     body: Center(
@@ -42,7 +41,7 @@ Widget dashboardWebViewDesign(DashboardScreenController controller) {
   );
 }
 
-Widget dashboardTabletViewDesign(DashboardScreenController controller) {
+Widget dashboardTabletViewDesign(InitScreenController controller) {
   return Scaffold(
     appBar:  AppBar(),
     body: Center(
@@ -61,7 +60,7 @@ Widget dashboardTabletViewDesign(DashboardScreenController controller) {
   );
 }
 
-Widget dashboardMobileViewDesign(DashboardScreenController controller) {
+Widget dashboardMobileViewDesign(InitScreenController controller) {
   return Scaffold(
     appBar:  AppBar(),
     body: Center(
@@ -70,8 +69,9 @@ Widget dashboardMobileViewDesign(DashboardScreenController controller) {
           LoadingOverlay(
             isLoading: controller.users?.status == Status.LOADING,
             child: Container(
+              height: Get.height,
               color: Colors.lightGreen,
-              child: CustomTextView(text: 'mobileView'.tr, style: textTheme.displaySmall),
+              child: Center(child: CustomTextView(text: 'mobileView'.tr, style: textTheme.displaySmall)),
             ),
           ),
         ],

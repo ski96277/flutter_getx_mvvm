@@ -1,11 +1,11 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:resono/Repository/UsersRepo.dart';
-import 'package:resono/data/response/api_response.dart';
-import 'package:resono/model/UsersModel.dart';
+import 'package:resono/data/model/UsersModel.dart';
+import 'package:resono/data/repository/UsersRepo.dart';
+import 'package:resono/services/response/api_response.dart';
 
-class DashboardScreenController extends GetxController {
+class InitScreenController extends GetxController {
 
   final _usersRepo = UsersRepo();
   ApiResponse<Users>? users;
