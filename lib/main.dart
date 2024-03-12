@@ -2,11 +2,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:resono/binding/view_model_binding.dart';
+import 'package:resono/utlis/preLoad/preLoadSVG.dart';
 import 'package:resono/utlis/text_const.dart';
 import 'package:resono/routes/app_pages.dart';
 import 'package:resono/routes/app_routes.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await preLoadSVGs([
+    // "assets/svg/empty.svg",
+  ]);
+
   runApp(
     const MyApp(),
   );
