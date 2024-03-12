@@ -1,4 +1,4 @@
-# resono
+# Code base project with GetX and MVVM
 
 A new Flutter project.
 
