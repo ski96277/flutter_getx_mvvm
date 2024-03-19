@@ -37,6 +37,6 @@ jobs:
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
 
-
+#Need to add secrets.TOKEN in the repository secrets
 # push to master, main
 # pull request on main master
